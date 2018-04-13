@@ -1,0 +1,36 @@
+{
+  "name": "mongo-half-stack",
+  "version": "1.0.0",
+  "description": "**Author**: Henrique Oliveira\r **Version**: 1.0.0",
+  "main": "mongo.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "mocha": "mocha",
+    "test": "npm run mocha",
+    "test:watch": "nodemon --exec npm run mocha",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnrzzle/mongo-half-stack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hnrzzle/mongo-half-stack/issues"
+  },
+  "homepage": "https://github.com/hnrzzle/mongo-half-stack#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.0",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "mongodb": "^3.0.6",
+    "dotenv": "^5.0.1"
+  }
+}

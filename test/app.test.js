@@ -9,4 +9,27 @@ const { assert } = chai;
 
 describe('Overwatch API', () => {
 
+    before(() => {
+        return mongo.then(db => {
+            db.collection('pirates').remove();
+        });
+    });
+
+    let tracer = {
+        name: 'Lena Oxton',
+        alias: 'Tracer',
+        nationality: 'British',
+        health: 150
+    };
+
+    it('saves a hero', () => {
+        return chai.request(app)
+            .post('/heroes')
+            .send(tracer)
+            .then(({ body }) => {
+                console.log(body);
+                assert.ok(body._id);
+            });
+    });
+
 });

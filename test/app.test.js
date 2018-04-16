@@ -19,14 +19,14 @@ describe('Overwatch API', () => {
         name: 'Lena Oxton',
         alias: 'Tracer',
         nationality: 'British',
-        health: 150
+        health: '150'
     };
 
     let dva = {
         name: 'Hana Song',
         alias: 'D.Va',
         nationality: 'Korean',
-        health: 150
+        health: '150'
     };
 
     it('saves a hero', () => {
@@ -57,7 +57,7 @@ describe('Overwatch API', () => {
             });
     });
 
-    it.skip('gets hero by id', () => {
+    it('gets hero by id', () => {
         return chai.request(app)
             .get(`/heroes/${dva._id}`)
             .then(({ body }) => {
@@ -66,7 +66,7 @@ describe('Overwatch API', () => {
     });
 
     it('updates hero by id', () => {
-        dva.health = 600;
+        dva.health = '600';
         return chai.request(app)
             .put(`/heroes/${dva._id}?health=600`)
             .then(() => {

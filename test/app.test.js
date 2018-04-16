@@ -76,7 +76,18 @@ describe('Overwatch API', () => {
                         assert.deepEqual(body, dva);
                     });
             });
+    });
 
+    it('deletes hero', () => {
+        return chai.request(app)
+            .del(`/heroes/${dva._id}`)
+            .then(() => {
+                return chai.request(app)
+                    .get('/heroes');
+            })
+            .then(({ body }) => {
+                assert.deepEqual(body, [tracer]);
+            });
     });
 
     after(() => mongo.client.close());

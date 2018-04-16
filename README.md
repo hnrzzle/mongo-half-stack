@@ -5,4 +5,12 @@
 
 ## Overview
 
-Description here
+A vanilla nodejs http server utilizing mongodb to create a REST API. 
+
+Includes standard `CRUD` methods:
+
+*  `GET /<resource>`
+* `POST /<resource>`
+* `GET /<resource>/:id`
+* `DELETE /<resource>/:id`
+* `PUT /<resource>/:id`
